@@ -1,0 +1,102 @@
+@font-face{
+	font-family: "digital-clock";
+	src: url(digital-7.ttf);
+}
+
+:root {
+    --font-color: white ;
+    --bg-color: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+}
+
+[theme="light"]{
+	--font-color: black;
+	--bg-color: linear-gradient(to right, rgb(153, 246, 228), rgb(217, 249, 157));
+}
+
+body{
+	background: var(--bg-color);
+}
+
+#watch{
+	font-family: "digital-clock";
+	color: var(--font-color);
+	border-color: var(--bg-color);;
+}
+
+#watch div{
+	position: absolute;
+	transform-origin: bottom;
+}
+
+#watch div#hours{
+	height: 25%;
+	top: 25%;
+	border: 4px solid #f4a4a4;
+	visibility: hidden;
+}
+
+#watch div#minutes{
+	height: 40%;
+	top: 10%;
+	border: 4px solid #f4a4a4;
+	visibility: hidden;
+}
+
+#watch div#seconds{
+	height: 40%;
+	top: 10%;
+	border: 4px solid var(--font-color);
+	visibility: hidden;
+}
+
+#switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 35px;
+	width: 35px;
+	left: 4px;
+	bottom: 2.5px;
+	background:conic-gradient(at center top, rgb(17, 24, 39), rgb(243, 244, 246), rgb(17, 24, 39));
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background: linear-gradient(rgb(17, 24, 39), rgb(75, 85, 99));
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 10px black;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(46px);
+	-ms-transform: translateX(46px);
+	transform: translateX(46px);
+}
+
+.clock{
+	color: var(--font-color);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+.slider.round:after {
+	border-radius: 50%;
+}

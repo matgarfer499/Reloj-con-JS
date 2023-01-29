@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reloj</title>
+	<script type="text/javascript" defer src="script.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="w-screen h-screen m-0 grid place-items-center overflow-hidden">
+	<div class="absolute top-8">
+		<label id="switch" class="relative inline-block w-[90px] h-[40px]">
+			<input type="checkbox">
+			<span class="slider round absolute cursor-pointer inset-0 bg-gradient-to-r from-gray-700 to-white"></span>
+		</label>
+	</div>
+	<div class="absolute top-8 right-3/4">
+		<label id="clock">
+			<input type="checkbox">
+			<span class="absolute cursor-pointer">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="clock w-10 h-10">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+			</span>
+		</label>
+	</div>
+	<div id="watch" class="flex items-center justify-center w-3/5 h-3/5 border-4 text-white rounded-full text-9xl shadow-xl shadow-purple-500 relative">
+		<div id="digital"></div>
+		<div id="hours"></div>
+		<div id="minutes"></div>
+		<div id="seconds"></div>
+	</div>
+</body>
+</html>
