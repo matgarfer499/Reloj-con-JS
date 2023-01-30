@@ -100,3 +100,19 @@ input:checked + .slider:before {
 .slider.round:after {
 	border-radius: 50%;
 }
+
+@media (max-width: 640px) {
+	#mode{
+		right: 50px;
+	}
+
+	#watch{
+		width: 70%;
+		height: 20%;
+	}
+
+	#digital{
+		font-size: 40%;
+	}
+
+}

@@ -29,28 +29,45 @@ setInterval(currentTime, 1000);
 const swithClock = document.querySelector('#clock input[type="checkbox"]');
 function changeClock(ev){
 	if (ev.target.checked) {
-		watch.style.width = '500px';
-		watch.style.height = '500px';
-		digital.style.fontSize = '20px';
-		digital.style.position = 'absolute';
-		digital.style.top = '51%';
-		digital.style.border = '2px solid red';
-		digital.style.padding = '5px';
 		hours.style.visibility = 'visible';
 		minutes.style.visibility = 'visible';
 		seconds.style.visibility = 'visible';
+		if(window.innerWidth >640){
+			watch.style.width = '500px';
+			watch.style.height = '500px';
+			digital.style.fontSize = '20px';
+			digital.style.position = 'absolute';
+			digital.style.top = '51%';
+			digital.style.border = '2px solid red';
+			digital.style.padding = '5px';
+		} else {
+			watch.style.width = '300px';
+			watch.style.height = '300px';
+			digital.style.fontSize = '20px';
+			digital.style.position = 'absolute';
+			digital.style.top = '55%';
+			digital.style.border = '2px solid red';
+			digital.style.padding = '5px';
+		}
+
 	}else{
-		watch.style.width = '60%';
-		watch.style.height = '60%';
-		digital.style.fontSize = '8rem';
-		digital.style.textAlign = 'center';
-		digital.style.position = 'relative';
-		digital.style.top = '0%';
-		digital.style.border = 'none';
-		digital.style.padding = '0px';
 		hours.style.visibility = 'hidden';
 		minutes.style.visibility = 'hidden';
 		seconds.style.visibility = 'hidden';
+		digital.style.padding = '0px';
+		digital.style.border = 'none';
+		digital.style.top = '0%';
+		digital.style.position = 'relative';
+		digital.style.textAlign = 'center';
+		if(window.innerWidth >640){
+			watch.style.width = '60%';
+			watch.style.height = '60%';
+			digital.style.fontSize = '8rem';
+		}else{
+			watch.style.width = '70%';
+			watch.style.height = '20%';
+			digital.style.fontSize = '40%';
+		}
 	}
 }
 
@@ -66,3 +83,5 @@ function changeMode(ev){
 	}
 }
 colorTheme.addEventListener('change', changeMode);
+
+console.log(window.innerWidth);
