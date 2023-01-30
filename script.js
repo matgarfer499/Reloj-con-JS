@@ -33,7 +33,9 @@ function changeClock(ev){
 		watch.style.height = '500px';
 		digital.style.fontSize = '20px';
 		digital.style.position = 'absolute';
-		digital.style.top = '10px';
+		digital.style.top = '51%';
+		digital.style.border = '2px solid red';
+		digital.style.padding = '5px';
 		hours.style.visibility = 'visible';
 		minutes.style.visibility = 'visible';
 		seconds.style.visibility = 'visible';
@@ -43,6 +45,9 @@ function changeClock(ev){
 		digital.style.fontSize = '8rem';
 		digital.style.textAlign = 'center';
 		digital.style.position = 'relative';
+		digital.style.top = '0%';
+		digital.style.border = 'none';
+		digital.style.padding = '0px';
 		hours.style.visibility = 'hidden';
 		minutes.style.visibility = 'hidden';
 		seconds.style.visibility = 'hidden';
